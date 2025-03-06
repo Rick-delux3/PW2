@@ -57,21 +57,31 @@
 
 
         if($_GET['botao']){
-            echo "Nome: $name";
-            if($ven < 1000){
-                echo "Total de vendas: $ven";
-                echo "Bonus: 0";
-                echo "Total a receber: $ven";
+            if($ven <= 1000){
+                echo "Nome: $name, 
+                Total de vendas: $ven, Bonus: 0, 
+                Total a receber: $ven";
+
             }
             elseif($ven > 1000 && $ven < 2000){
-                echo "Total de vendas: $ven";
-                echo "Bonus: 30%";
-                echo "Total a receber: $bonus3";
+                echo "Nome: $name, 
+                Total de vendas: $ven, Bonus: 30%, 
+                Total a receber: $bonus3";
             }
-            
+            elseif($ven > 2000 && $ven < 5000){
+                echo "Nome: $name, 
+                Total de vendas: $ven, Bonus: 30%, 
+                Total a receber: $bonus2";
+            }
+            elseif($ven > 5000){
+                echo "Nome: $name, 
+                Total de vendas: $ven, Bonus: 30%, 
+                Total a receber: $bonus1";
+            }
         }
        
     ?>
     
 </body>
+
 </html>
