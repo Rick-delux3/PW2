@@ -1,0 +1,22 @@
+h1{
+    font-family: "Oswald", sans-serif;
+    font-size: 90px;
+}
+.bg-grayscale-30{
+    background:#a4a4a4;
+}
+.bg-grayscale-30 > marquee, .bg-grayscale-30 > p{
+    color: #fff;
+}
+.bg-grayscale-30 marquee{
+    font-size: 48px;
+}
+.bg-grayscale-30 p{
+    font-size: 18px;
+}
+.bg-grayscale-50{
+    background:#6a6a6a;
+}
+
+
+
