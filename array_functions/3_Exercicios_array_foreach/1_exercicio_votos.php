@@ -8,7 +8,7 @@
         ],
         [
             'nome' => 'Pedro';
-            'idade' => 17
+            'idade' => 17;
 
         ],
         [
