@@ -18,8 +18,8 @@
     $password = isset($_POST['password']) ? $_POST['password'] : exit() ;
 
     //statement
-    $stmt = $pdo->prepare('INSERT INTO usuario (id, username, password) VALUES (:id, :username, :password');
-    $stmt->bindParam(':id', 0);
+    $stmt = $pdo->prepare('INSERT INTO usuario ( username, password) VALUES ( :username, :password');
+
     $stmt->binParam(':username', $username);
     $stmt->binParam(':password', $password);
     $stmt->execute();
