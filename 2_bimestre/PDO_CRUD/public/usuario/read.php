@@ -22,7 +22,8 @@ if( isset($_GET['id']) ){
         <strong>Nome da Heroina:</strong><?php echo $user['username']; ?>
         <br>
         <a href="http://localhost/PW2/2_bimestre/PDO_CRUD/public/usuario/delete.php?id=<?php echo $user['id']; ?>">Remover</a>
-                                                                             
+        <a href="http://localhost/PW2/2_bimestre/PDO_CRUD/public/usuario/update.php?id=<?php echo $user['id']; ?>">Atualizar</a>
+                                                                    
         <a href="">Editar</a>
         <hr>
     </p>
