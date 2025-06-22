@@ -11,26 +11,20 @@
 
 <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container d-flex align-items-center justify-content-between">
-    
-    <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
       <img src="img/Logo_empresa.png" alt="Logo" class="logo-img">
       <span class="brand-name">CARS</span>
     </a>
-
-    <!-- Menu toggle (responsivo) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Links -->
     <div class="collapse navbar-collapse justify-content-end" id="navBar">
       <ul class="navbar-nav gap-3">
         <li class="nav-item">
           <a class="btn btn-primary px-4 fw-bold" href="usuario/create.php">Cadastrar</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-outline-light px-4 fw-bold" href="usuario/read.php">Catálogo</a>
+          <a class="btn btn-outline-light px-4 fw-bold" href="anuncios.php">Catálogo</a>
         </li>
       </ul>
     </div>
