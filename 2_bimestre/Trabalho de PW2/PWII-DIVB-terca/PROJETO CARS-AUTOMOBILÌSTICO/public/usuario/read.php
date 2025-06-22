@@ -14,7 +14,23 @@
 ?>
 
     <?php foreach ($anuncios as $indice => $cars) {  ?>
-        <p><strong>Título:</strong><?php echo $cars["titulo"]; ?></p>
+        <div>
+            <div>
+                <h1><strong>Título:</strong><?php echo $cars["titulo"]; ?></h1>
+            </div>
+            <div>
+                <p><strong>Descrição:</strong><?php echo $cars["descricao"]; ?></p>
+            </div>
+            <div>
+                <p><strong>Data da Publicação:</strong><?php echo $cars["data_public"]; ?></p>
+            </div>
+            <div>
+                
+            </div>
+
+        </div>
+        
+
         <a href="http://localhost/ETEC/PWII-DIVA-terca/PDO_CRUD/public/usuario/delete.php?id=<?php echo $cars["Id"]; ?>">Remover</a>
         <a href="http://localhost/ETEC/PWII-DIVA-terca/PDO_CRUD/public/usuario/update.php?id=<?php echo $cars["Id"]; ?>">Atualizar</a>
         <hr>

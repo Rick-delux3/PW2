@@ -1,73 +1,35 @@
 <?php include '../includes/header.php'; ?>
 
-<?php include '../includes/main_index.php'; ?>
+<main class="father">
+    <div class="contain1">
+      <img src="img/577-5771533_group-of-cars-png-transparent-png__1_-removebg-preview.png" alt="cars" class="group-cars">
+    </div>
+    <div class="contain2">
+      <div class="item1">
+        <h1>SOBRE NÓS</h1>
+        <p>Nossa plataforma é dedicada à divulgação de anúncios de automóveis novos e seminovos, conectando compradores e vendedores de forma prática, segura e eficiente. Aqui, você encontra uma ampla variedade de veículos, com informações claras e atualizadas, para que possa realizar o melhor negócio com confiança e transparência.  Seja para vender seu carro ou encontrar o modelo ideal, conte com um ambiente profissional e focado em facilitar sua experiência no mercado automotivo.</p>
+        <nav>
+          <a href="login.php">LOGIN</a>
+          <a href="catalog.php">CATÁLOGO</a>
+        </nav>
+      </div>
+      <div class=item2>
+        <h1>NOSSAS MARCAS:</h1>
+        <div class="flex-imgs">
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+          <div class="imgs"></div>
+        </div>
+      </div>
+    </div>
+</main>
+
 
 <?php include '../includes/footer.php'; ?>
 
 
-<style>
-    body {
-    background-color: #730202 ;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .main1{
-    
-  }
-
-  .hero {
-    padding: 100px 20px;
-    text-align: center;
-    background: url('img/fundo-cars.jpg') no-repeat center center/cover;
-    position: relative;
-  }
-
-  .hero::before {
-    content: '';
-    background-color:#;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color:white;
-  }
-
-  .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-  }
-
-  .hero .btn {
-    margin: 0 10px;
-    padding: 12px 24px;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 0.3s;
-  }
-
-  .btn-login {
-    background-color: white;
-    color: black;
-  }
-
-  .btn-login:hover {
-    background-color: #ccc;
-  }
-
-  .btn-catálogo {
-    background-color: #ff0000;
-    color: white;
-  }
-
-  .btn-catálogo:hover {
-    background-color: #cc0000;
-  }
-</style>

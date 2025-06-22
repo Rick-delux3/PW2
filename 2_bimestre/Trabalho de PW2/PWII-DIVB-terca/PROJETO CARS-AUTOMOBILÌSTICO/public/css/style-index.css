@@ -1,0 +1,161 @@
+:root{
+  --cor-principal:#730202;
+  --cor-secuntaria:#A60303;
+  --cor-terciaria:#F20505;
+  --fundos:#F2F2F2;
+  --escuro:#0D0D0D;
+}
+.custom-navbar {
+  background-color: #000;
+  border-bottom: 4px solid #A60303;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.brand-name {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-left: 8px;
+}
+
+.navbar-nav .btn {
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px;
+}
+
+.navbar-nav .btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+ body {
+    background-color: var(--fundos) ;
+    color: var(--fundos);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-fluid{
+    margin: auto;
+  }
+ 
+
+  
+  
+  .father{
+    display:flex;
+    flex-direction:column;
+    width: 100%;
+    height: 1200px;
+    
+
+  }
+
+  .contain1{
+    width: 100%;
+    height: 700px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    
+    
+  }
+  .group-cars{
+     width: 1000px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .contain2{
+    width: 100%;
+    height: 2200px;
+    background-color: #730202;
+    display:flex;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -100px; /* essa é a mágica: o vermelho "sobe" e encosta na imagem */
+    border-top: 10px solid white;
+  }
+  @keyframes flutuar {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+  .item1,
+  .item2{
+    margin-top:100px;
+    width: 800px;
+    height: 550px;
+    background-color:#A60303;
+    margin: 40px auto;
+    border-radius:20px;
+    padding-top: 50px;
+    box-shadow: 5px 4px 3px var(--escuro);
+    transition: transform 0.3s ease;
+    animation: flutuar 3s ease-in-out infinite;
+
+    
+    
+  }
+  .item1:hover{
+    transform: scale(1.05);
+  }
+  .item1 > h1{
+    text-align:start;
+    padding-left: 55px;
+    font-size:40px;
+    font-family:Bebas Neue;
+    color:white;
+    
+    
+  }
+ p{
+  color:white;
+  font-size:25px;
+  font-family:Bebas Neue;
+  padding: 40px;
+ }
+
+ .item1 > nav{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+ }
+ .item1 > nav > a{
+   background-color: var(--cor-principal);
+   color: var(--fundos);
+   cursor: pointer;
+   margin-right: 120px;
+   width: 200px;
+   text-align: center;
+   padding: 10px;
+   border-radius: 20px;
+   text-decoration: none;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+   
+ }
+ .item1 > nav > a:hover{
+  background-color:#0D0D0D;
+  color: #730202;
+  transform: scale(1.05);
+ }
+  
+
+  
