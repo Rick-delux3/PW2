@@ -10,19 +10,13 @@
 <body>
     <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container d-flex justify-content-between align-items-center">
-    
-    <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
       <img src="img/Logo_empresa.png" alt="Logo" class="logo-img">
       <span class="brand-name">CARS</span>
     </a>
-
-    <!-- Botão responsivo -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDesktop">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Itens da barra -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarDesktop">
       <ul class="navbar-nav align-items-center gap-4">
         <li class="nav-item">

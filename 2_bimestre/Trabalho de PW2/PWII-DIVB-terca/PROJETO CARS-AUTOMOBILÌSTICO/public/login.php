@@ -3,7 +3,7 @@
 <div class="login-container d-flex justify-content-center align-items-center">
   <div class="login-card shadow">
     <h2 class="text-white text-center mb-4">LOGIN DO VENDEDOR</h2>
-    <form action="processa_login.php" method="POST">
+    <form action="login.php" method="POST">
       <div class="mb-3">
         <label for="nome" class="form-label text-white">NOME:</label>
         <input type="text" name="nome" class="form-control login-input" required>
