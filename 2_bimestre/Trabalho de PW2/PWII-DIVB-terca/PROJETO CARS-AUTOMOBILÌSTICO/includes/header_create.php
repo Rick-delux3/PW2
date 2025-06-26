@@ -6,7 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style-work.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../ccs/style-anuncios.css">
     <link rel="stylesheet" href="../css/style_form-create.css">
 </head>
 <body>
@@ -31,10 +30,10 @@
           <a class="nav-link text-white fw-semibold" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="./usuario/create.php">Cadastrar Anuncio</a>
+          <a class="nav-link text-white fw-semibold" href="./index.php">Tela inicial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white fw-semibold" href="index.php">Voltar ao inicio</a>
+          <a class="nav-link text-white fw-semibold" href="./anuncios.php">Meus anuncios</a>
         </li>
         <?php 
           session_start();

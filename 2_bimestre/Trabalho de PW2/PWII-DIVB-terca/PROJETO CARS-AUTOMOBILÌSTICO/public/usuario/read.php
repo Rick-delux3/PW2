@@ -1,3 +1,5 @@
+<?php include '../../includes/header_anuncios'?>
+
 <?php 
     include '../../config/connection.php'; 
 
@@ -13,28 +15,43 @@
     // echo var_dump($usuarios);
 ?>
 
-    <?php foreach ($anuncios as $indice => $cars) {  ?>
-        <div>
-            <div>
-                <h1><strong>Título:</strong><?php echo $cars["titulo"]; ?></h1>
-            </div>
-            <div>
-                <p><strong>Descrição:</strong><?php echo $cars["descricao"]; ?></p>
-            </div>
-            <div>
-                <p><strong>Data da Publicação:</strong><?php echo $cars["data_public"]; ?></p>
-            </div>
-            <div>
-                
-            </div>
+    <div class="d-flex">
+    <div class="col-2 sidebar d-flex flex-column align-items-center">
+      <button class="btn btn-dark">VENDAS FEITAS</button>
+      <button class="btn btn-dark">CLIENTES</button>
+      <button class="btn btn-dark">PACERIAS</button>
+    </div>
 
-        </div>
-        
+    <div class="col-10 container-anuncios">
+      <div class="row">
+        <?php foreach ($anuncios as $indice => $cars) { ?>
+          <div class="col-md-6">
+            <div class="card-anuncio">
+              <h2><?php echo strtoupper($cars['titulo']); ?></h2>
+              <p><strong><?php echo $cars['descricao']; ?></strong></p>
+              <p><?php echo strtoupper($cars['modelo_veiculo']); ?><br>
+              <?php echo strtoupper($cars['marca_veiculo']); ?><br>
+              <?php echo $cars['ano_veiculo']; ?><br>
+              <?php echo strtoupper($cars['cor_veiculo']); ?><br>
+              PLACA: <?php echo strtoupper($cars['placa_veiculo']); ?></p>
+              <p><strong>LIGUE PARA:</strong><br><?php echo $cars['telefone']; ?></p>
+              <?php if (!empty($cars['imagem'])): ?>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($cars['imagem']); ?>" alt="Imagem do carro">
+              <?php endif; ?>
+              <div class="btn-group">
+                <a href="delete.php?id=<?php echo $cars['Id']; ?>" class="btn btn-custom">Deletar</a>
+                <a href="update.php?id=<?php echo $cars['Id']; ?>" class="btn btn-custom">Atualizar</a>
+              </div>
+            </div>
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+  </div>
 
-        <a href="http://localhost/ETEC/PWII-DIVA-terca/PDO_CRUD/public/usuario/delete.php?id=<?php echo $cars["Id"]; ?>">Remover</a>
-        <a href="http://localhost/ETEC/PWII-DIVA-terca/PDO_CRUD/public/usuario/update.php?id=<?php echo $cars["Id"]; ?>">Atualizar</a>
-        <hr>
-    <?php } ?>
+  <?php
+    include '../includes/footer.php'
+  ?>
 
 
 

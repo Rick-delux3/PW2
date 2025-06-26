@@ -1,7 +1,7 @@
 <?php
     // Configuração da conexão com BD
     $host = 'localhost';
-    $database = 'vendas';
+    $database = 'vendas+';
     $user = 'root';
     $password = '';
 

@@ -1,88 +1,92 @@
 <?php
     include '../../config/connection.php';
 ?>
+<?php
+    include '../../includes/header_anuncios.php'
 
-<form action="create.php" method="POST" class="form">
-    <legend></legend>
-    <div class="mb-3">
-        <label for="titulo" class>Título Do Anuncio</label>
-        <input type="text" name="h1" id="titulo">
-    </div>
-    <div class="mb-3">
-        <label for="descricao">Descrição do Anuncio</label>
-        <input type="text" name="pdssword" id="descricao">
-        
-    </div>
-    <div class="mb-3">
-        <label for="data_public">Data da Publicação</label>
-        <input type="text" name="public" id="data_public">
-        
-    </div>
-    <div class="mb-3">
-        <label for="nome">Nome do Proprietário:</label>
-        <input type="text" name="nome" id="nome">
-        
-    </div>
-    <div class="mb-3">
-        <label for="tell">Telefone:</label>
-        <input type="text" name="tell" id="tell">
-        
-    </div>
-    <div class="mb-3">
-        <label for="marca_veiculo">Marca do Veículo</label>
-        <input type="text" name="marc" id="marca_veiculo">
-        
-    </div>
-    <div class="mb-3">
-        <label for="modelo_veiculo">Modelo do Veículo</label>
-        <input type="text" name="modelo" id="modelo_veiculo">
-        
-    </div>
-    <div class="mb-3">
-        <label for="ano_veiculo">Ano do Veículo</label>
-        <input type="text" name="date" id="ano_veiculo">
-        
-    </div>
-    <div class="mb-3">
-        <label for="cor_veiculo">Cor:</label>
-        <input type="text" name="cor" id="cor_veiculo">
-        
-    </div>
-    <div class="mb-3">
-        <label for="placa_veiculo">Placa:</label>
-        <input type="text" name="placa" id="placa_veiculo">
+?>
 
+<form action="create.php" method="POST" enctype="multipart/form-data">
+  <div class="container-form">
+    <div class="left-info">
+      <img src="../../assets/mcqueen1.png" alt="carro" width="150">
+      <h3>OS ANUNCIOS CRIADOS VÃO DIRETO PARA A SUA PÁGINA DE ANUNCIOS!!</h3>
+      <p>VOCÊ PODERÁ EDITAR QUANDO QUISER!!</p>
+      <img src="../../assets/mcqueen2.png" alt="carro" width="150">
+      <p>VENHA FAZER PARTE DA NOSSA EQUIPE!! VOCÊ PODE VENDER E REVENDER QUANDO QUISER!!</p>
     </div>
-    
-    
-    
-    
-    
-    <h1>Dados do Veículo:</h1>
-    
-    
-    
-    
-    
-    
-    <button type="submit">Cadastrar</button>
+    <div class="right-form">
+      <h2>CADASTRO DE ANÚNCIO</h2>
+      <div class="form-group">
+        <label for="titulo">Nome do anúncio:</label>
+        <input type="text" name="titulo" required>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição Anuncio:</label>
+        <textarea name="descricao" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="data_public">Data de Publicação:</label>
+        <input type="text" name="data_public" required>
+      </div>
+      <h4>DADOS DO VEÍCULO:</h4>
+      <div class="form-group">
+        <label>Modelo:</label>
+        <input type="text" name="modelo_veiculo" required>
+      </div>
+      <div class="form-group">
+        <label>Marca:</label>
+        <input type="text" name="marca_veiculo" required>
+      </div>
+      <div class="form-group">
+        <label>Ano:</label>
+        <input type="text" name="ano_veiculo" required>
+      </div>
+      <div class="form-group">
+        <label>Cor:</label>
+        <input type="text" name="cor_veiculo" required>
+      </div>
+      <div class="form-group">
+        <label>Placa:</label>
+        <input type="text" name="placa_veiculo" required>
+      </div>
+      <div class="form-group">
+        <label>Nome do Proprietário:</label>
+        <input type="text" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label>Telefone do Proprietário:</label>
+        <input type="text" name="telefone" required>
+      </div>
+      <div class="form-group">
+        <label>Foto do veículo:</label>
+        <input type="file" name="imagem" accept="image/*" required>
+      </div>
+      <button type="submit">Cadastrar</button>
+    </div>
+  </div>
 </form>
 
 <?php
-    $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : exit() ;
-    $descricao = isset($_POST['descricao']) ? $_POST['descricao'] : exit() ;
-    $data_public = isset($_POST['data_public']) ? $_POST['data_public'] : exit() ;
-    $nome = isset($_POST['nome']) ? $_POST['nome'] : exit() ;
-    $telefone = isset($_POST['tell']) ? $_POST['tell'] : exit() ;
-    $marca_veiculo = isset($_POST['marca_veiculo']) ? $_POST['marca_veiculo'] : exit() ;
-    $modelo_veiculo = isset($_POST['modelo_veiculo']) ? $_POST['modelo_veiculo'] : exit() ;
-    $ano_veiculo = isset($_POST['ano_veiculo']) ? $_POST['ano_veiculo'] : exit() ;
-    $cor_veiculo = isset($_POST['cor_veiculo']) ? $_POST['cor_veiculo'] : exit() ;
-    $placa_veiculo = isset($_POST['placa_veiculo']) ? $_POST['placa_veiculo'] : exit() ;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $titulo = $_POST['titulo'];
+      $descricao = $_POST['descricao'];
+      $data_public = $_POST['data_public'];
+      $nome = $_POST['nome'];
+      $telefone = $_POST['telefone'];
+      $marca_veiculo = $_POST['marca_veiculo'];
+      $modelo_veiculo = $_POST['modelo_veiculo'];
+      $ano_veiculo = $_POST['ano_veiculo'];
+      $cor_veiculo = $_POST['cor_veiculo'];
+      $placa_veiculo = $_POST['placa_veiculo'];
+      $imagem = file_get_contents($_FILES['imagem']['tmp_name']);
+
+
+
     
     
     //statement
-    $stmt = $pdo->prepare('INSERT INTO anuncios (titulo, descricao, data_public, marca_veiculo, modelo_veiculo, ano_veiculo, cor_veiculo, placa_veiculo, nome, telefone) VALUES (:titulo, :descricao, :data_public, :marca_veiculo, :modelo_veiculo, :ano_veiculo, :cor_veiculo, :placa_veiculo, :nome, :telefone)');
+    $stmt = $pdo->prepare('INSERT INTO anuncios (titulo, descricao, data_public, marca_veiculo, modelo_veiculo, ano_veiculo, cor_veiculo, placa_veiculo, nome, telefone, imagem) VALUES (:titulo, :descricao, :data_public, :marca_veiculo, :modelo_veiculo, :ano_veiculo, :cor_veiculo, :placa_veiculo, :nome, :telefone, :imagem)');
     $stmt->bindParam(':titulo', $titulo);
     $stmt->bindParam(':descricao', $descricao);
     $stmt->bindParam(':data_public', $data_public);
@@ -93,8 +97,17 @@
     $stmt->bindParam(':ano_veiculo', $ano_veiculo);
     $stmt->bindParam(':cor_veiculo', $cor_veiculo);
     $stmt->bindParam(':placa_veiculo', $placa_veiculo);
+    $stmt->bindParam(':imagem', $imagem);
     $stmt->execute();
     
+  
+    echo "<script>alert('Anúncio cadastrado com sucesso!'); window.location.href='anuncios.php';</script>";
+    exit;
+  }
+
+
+
+
     
 ?>
 

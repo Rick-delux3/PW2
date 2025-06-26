@@ -1,6 +1,6 @@
 <?php include '../includes/header_login.php'; ?>
 
-<?php sessionStarts() ?>
+<?php session_start() ?>
 
 <div class="login-container d-flex justify-content-center align-items-center">
   <div class="login-card shadow">
@@ -28,16 +28,12 @@
 
 <?php
     $email = isset($_POST['email']) ? $_POST['email'] : exit();
-    $password = isset($_POST['password']) ? $_POST['password'] : exit();
-    $name = isset($_POST['name']) ? $_POST['name'] : exit();
-
-    if($email == 'admin@hotmail.com' && $senha =='naopalmeirasworldcup'){
-      $_SESSION['email'] = $email;
-      header('Location: header_anuncios.php');
-    }
-    else{
-
-   ?> 
+    $password = isset($_POST['senha']) ? $_POST['senha'] : exit();
+    $name = isset($_POST['nome']) ? $_POST['nome'] : exit();
+    
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($password) < 8){
+      
+    ?>
       <div class="container m-3">
         <div class="row">
           <div class="col-8 d-flex justify-content-center">
@@ -47,11 +43,21 @@
           </div>
         </div>
       </div>
-  <?php
+      
+      
+      <?php 
     }
-    echo $email
+    else{
+      
+      $_SESSION['nome'] = $name;
+      header('Location: ./usuario/read.php');
 
-  ?>
+    };
+
+    ?>
+
+  
+  
 
 
 
