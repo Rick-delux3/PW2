@@ -12,6 +12,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 4px 4px 4px var(--escuro);
 }
 
 .logo-img {
@@ -120,12 +121,19 @@
   }
   .item1 > h1{
     text-align:start;
-    padding-left: 55px;
+    padding-left: 60px;
     font-size:40px;
     font-family:Bebas Neue;
     color:white;
     
     
+  }
+  .item2 > h1{
+    text-align:start;
+    padding-left: 60px;
+    font-size:40px;
+    font-family:Bebas Neue;
+    color:white;
   }
  p{
   color:white;
@@ -157,6 +165,24 @@
   color: #730202;
   transform: scale(1.05);
  }
+ .item2 > .flex-imgs{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+ }
+ .imgs img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.imgs img:hover {
+  transform: scale(1.1);
+}
+
+ 
   
 
   

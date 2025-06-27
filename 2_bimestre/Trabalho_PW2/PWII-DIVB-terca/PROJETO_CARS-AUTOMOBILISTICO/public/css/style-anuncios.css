@@ -1,0 +1,73 @@
+:root{
+  --cor-principal:#730202;
+  --cor-secuntaria:#A60303;
+  --cor-terciaria:#F20505;
+  --fundos:#F2F2F2;
+  --escuro:#0D0D0D;
+}
+
+.contain{
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+#contain1{
+  background-color: var(--cor-terciaria);
+  color: var(--cor-principal);
+  justify-content: space-around;
+}
+.it1, .it2, .it3 {
+    height: 200px;
+    width: 200px;
+    background-color: var(--cor-secuntaria);
+    border-radius: 20px;
+
+}
+.card-anuncio {
+      background-color: var(--fundos);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+.card-anuncio h2 {
+      background-color: var(--escuro);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 15px;
+    }
+.card-anuncio img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+.btn-custom {
+      background-color: var(--escuro);
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 5px 20px;
+      border: none;
+      margin: 5px;
+      transition: transform 0.3s ease;
+    }
+.btn-custom:hover {
+      background-color: var(--cor-principal);
+    }
+.btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+.container-anuncios {
+      padding: 20px;
+      background-color: var(--cor-principal);
+      min-height: 100vh;
+    }
