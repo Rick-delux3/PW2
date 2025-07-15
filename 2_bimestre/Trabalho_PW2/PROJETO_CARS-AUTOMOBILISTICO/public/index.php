@@ -7,7 +7,7 @@
     <div class="contain2">
       <div class="item1">
         <h1>SOBRE NÓS</h1>
-        <p>Nossa plataforma é dedicada à divulgação de anúncios de automóveis novos e seminovos, conectando compradores e vendedores de forma prática, segura e eficiente. Aqui, você encontra uma ampla variedade de veículos, com informações claras e atualizadas, para que possa realizar o melhor negócio com confiança e transparência.  Seja para vender seu carro ou encontrar o modelo ideal, conte com um ambiente profissional e focado em facilitar sua experiência no mercado automotivo.</p>
+        <p>Nossa plataforma é dedicada à divulgação de anúncios de automóveis novos e seminovos, conectando compradores e vendedores de forma prática, segura e eficiente. Aqui, você encontra uma ampla variedade de veículos, com informações claras e atualizadas, para que possa realizar o melhor negócio com confiança e transparência. Seja para vender seu carro ou encontrar o modelo ideal, conte com um ambiente profissional e focado em facilitar sua experiência no mercado automotivo.</p>
         <nav>
           <a href="login.php">LOGIN</a>
           <a href="#">Afiliador</a>

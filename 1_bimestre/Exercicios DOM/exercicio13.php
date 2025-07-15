@@ -42,10 +42,10 @@
             $med = ($pt+$mat+$ing+$info)/4;
 
             if($med>=7 && $freq>=0.75){
-                echo'O aluno '.$nome.' foi aprovado.';
-            }
+                echo"O aluno $nome foi Promovido!!";
+             }
             else{
-                echo'O aluno '.$nome.' foi reprovado.';
+                echo" O aluno $nome foi Reprovado!!";
             }
         }
     ?>
