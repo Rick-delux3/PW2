@@ -15,11 +15,34 @@
 
         }
 
-        public function inserir(){}
+        public function inserir(){
 
-        public function buscar($id){}
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $nome = $_POST['nome'];
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+                $tipo = 'admin'
+            
+                $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)");
+                $stmt->bindParam(':nome', $nome);
+                $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':senha', $senha);
+                $stmt->bindParam(':tipo', $tipo);
+                $stmt->execute();
+            
+            }
 
-        public function buscarTodos(){}
+        }
+
+        public function buscar($id){
+            $stmt = $pdo->query("SELECT * FROM usuario WHERE id = $id");
+	        $usuarios = $stmt->fetchAll();
+        }
+
+        public function buscarTodos(){
+            $stmt = $pdo->query("SELECT * FROM usuario");
+            $usuario = $stmt->fetchAll();
+        }
 
         public function atualizar($id){}
 
