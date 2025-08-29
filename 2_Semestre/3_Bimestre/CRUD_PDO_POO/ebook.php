@@ -32,8 +32,8 @@ class Ebook{
 
 
             $stmt = $pdo->prepare("INSERT INTO ebook (titulo, descricao, isbn, data_publicacao, preco, idioma, foto) VALUES (:titulo, :descricao, :isbn, :data_public, :preco, :idioma, :foto)");
-            $stmt->bindParam(':titulo', $nota);
-            $stmt->bindParam(':descricao', $comentario);
+            $stmt->bindParam(':titulo', $titulo);
+            $stmt->bindParam(':descricao', $descricao);
             $stmt->bindParam(':isbn', $isbn);
             $stmt->bindParam(':data_public', $data_publicacao);
             $stmt->bindParam(':preco', $preco);
@@ -54,7 +54,18 @@ class Ebook{
         $ebook = $stmt->fetchAll();
     }
 
-    public function atualizar($id){}
+    public function atualizar($id, $titulo, $descricao, $isbn, $data_publicacao, $preco, $idioma, $foto){
+           $stmt = $pdo->prepare("UPDATE ebook SET titulo = :titulo, descricao = :descricao, isbn = :isbn, data_publicacao = :data_publicacao, foto = :foto WHERE id = :id");
+            $stmt->bindParam(':titulo', $titulo);
+            $stmt->bindParam(':descricao', $descricao);
+            $stmt->bindParam(':isbn', $isbn);
+            $stmt->bindParam(':data_publicacao', $data_publicacao);
+            $stmt->bindParam(':preco', $preco);
+            $stmt->bindParam(':idioma', $idioma);
+            $stmt->bindParam(':foto', $foto);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+    }
 
     public function deletar($id){
         $stmt = $pdo->prepare('DELETE FROM ebook WHERE id = :id');

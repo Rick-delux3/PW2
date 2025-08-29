@@ -30,7 +30,12 @@ class Categoria{
         $categoria = $stmt->fetchAll();
     }
 
-    public function atualizar($id){}
+    public function atualizar($id, $nome){
+        $stmt = $pdo->prepare("UPDATE categoria SET nome = :nome WHERE id = :id");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 
     public function deletar($id){
         $stmt = $pdo->prepare('DELETE FROM categoria WHERE id = :id');

@@ -9,7 +9,7 @@ class Editora{
     public function __construct($nome, $site, $email){
         $this->$nome = $nome;
         $this->$site = $site;
-        $this->$emial = $email;
+        $this->$email = $email;
     }
 
     public function inserir(){
@@ -37,7 +37,14 @@ class Editora{
         $editora = $stmt->fetchAll();
     }
 
-    public function atualizar($id){}
+    public function atualizar($id, $nome, $site, $email){
+        $stmt = $pdo->prepare("UPDATE editora SET nome = :nome, site = :site, email = :email WHERE id = :id");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':email', $site);
+        $stmt->bindParam(':senha', $email);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 
     public function deletar($id){
         $stmt = $pdo->prepare('DELETE FROM editora WHERE id = :id');

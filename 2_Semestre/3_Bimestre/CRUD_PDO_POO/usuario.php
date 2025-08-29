@@ -44,7 +44,15 @@
             $usuario = $stmt->fetchAll();
         }
 
-        public function atualizar($id){}
+        public function atualizar($id, $nome, $email, $senha, $tipo){
+            $stmt = $pdo->prepare("UPDATE usuario SET nome = :nome, email = :email, senha = :senha, tipo = :tipo WHERE id = :id");
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
+            $stmt->bindParam(':tipo', $tipo);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        }
 
         public function login(){}
 

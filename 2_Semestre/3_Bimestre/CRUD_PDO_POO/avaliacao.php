@@ -37,7 +37,14 @@ class Avalicao{
         $avaliacao = $stmt->fetchAll();
     }
 
-    public function atualizar($id){}
+    public function atualizar($id, $nota, $comentario, $data){
+        $stmt = $pdo->prepare("UPDATE avaliacao SET nota = :nota, comentario = :comentario, data = :data WHERE id = :id");
+        $stmt->bindParam(':nota', $nota);
+        $stmt->bindParam(':comentario', $comentario);
+        $stmt->bindParam(':data', $data);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 
     public function deletar($id){
         $stmt = $pdo->prepare('DELETE FROM avaliacao WHERE id = :id');

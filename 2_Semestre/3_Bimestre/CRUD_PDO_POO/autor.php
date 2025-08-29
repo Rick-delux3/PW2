@@ -37,7 +37,14 @@ class Autor{
         $autor = $stmt->fetchAll();
     }
 
-    public function atualizar($id){}
+    public function atualizar($id, $nome, $bio, $foto){
+        $stmt = $pdo->prepare("UPDATE autor SET nome = :nome, biografia = :biografia, foto = :foto WHERE id = :id");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':biografia', $bio);
+        $stmt->bindParam(':foto', $foto);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 
     public function deletar($id){
         $stmt = $pdo->prepare('DELETE FROM autor WHERE id = :id');
