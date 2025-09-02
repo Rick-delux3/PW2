@@ -1,7 +1,7 @@
 <?php
 
     class Usuario{
-        private $id
+        private $id;
         private $nome;
         private $email;
         private $senha;
@@ -15,22 +15,23 @@
 
         }
 
-        public function inserir(){
+        public function inserir($nome, $email, $senha, $confirmar_senha, $tipo){
+            global $pdo;
+            if ($senha != $confirmar_senha)
+                return 'As senhas não conferem!';
 
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                $nome = $_POST['nome'];
-                $email = $_POST['email'];
-                $senha = $_POST['senha'];
-                $tipo = 'admin'
+            if (empty($nome) || empty($email) || empty($senha) || empty($confirmar_senha))
+                return 'Favor preencher todos os campos!!';
             
-                $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)");
-                $stmt->bindParam(':nome', $nome);
-                $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':senha', $senha);
-                $stmt->bindParam(':tipo', $tipo);
-                $stmt->execute();
+            $tipo = 'admin';
+            $stmt = $pdo->prepare("INSERT INTO usuario (nome, email, senha, tipo) VALUES (:nome, :email, :senha, :tipo)");
+            $stmt->bindParam(':nome', $nome);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
+            $stmt->bindParam(':tipo', $tipo);
+            $stmt->execute();
             
-            }
+            
 
         }
 
